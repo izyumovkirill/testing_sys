@@ -79,7 +79,7 @@ def webtest(tablfm='', enabled_features=['date', 'http', 'ping', 'skycontrol', '
 
     requests.packages.urllib3.disable_warnings(
         requests.packages.urllib3.exceptions.InsecureRequestWarning)# Отключаем предупреждения 
-    print('Получаем состояние cccb.ru...')
+    print('Получаем состояние сайта...')
     r = requests.get("********************", verify=False).text# получаем данные о работе сайта
     cccbtest = re.sub('<[^<]+?>', '', r)# Тут подключились к веб-интерфейсу и получили с него строку состяния
     print(cccbtest.split('Web-service - ')[1])
